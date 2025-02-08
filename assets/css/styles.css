@@ -11,3 +11,40 @@
     opacity: 1;
     background-color: #fff;
 }
+
+.nav-link {
+    transition: all 0.3s ease; /* Faz a transição suave */
+}
+
+.nav-link:hover {
+    color: #011c3f !important;
+    /* Outros efeitos possíveis: */
+    text-decoration: none;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.dropdown-menu {
+    background-color:#4088e6 !important;
+    border-radius: 10px;    /* arredondar bordas */
+    border: 2px solid #cor; /* borda */
+    padding: 10px;
+}
+
+.dropdown-item {
+    color: #fff !important;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+
+/* Efeito hover nos itens */
+.dropdown-item:hover {
+    background-color: #4088e6 !important;
+    color: white !important;
+    transform: scale(1.05);
+}
+
+.dropdown-divider {
+    border-color: #fff;
+    margin: 8px 0;
+}
