@@ -1,3 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 100px;
+}
+
+p{
+    font-size: 50px;
+}
+
+section{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .carousel-indicators [data-bs-target] {
     width: 20px !important;
     height: 20px !important;
@@ -17,7 +40,7 @@
 }
 
 .nav-link:hover {
-    color: #011c3f !important;
+    color: #4088e6 !important;
     /* Outros efeitos possíveis: */
     text-decoration: none;
     transform: scale(1.1);
@@ -27,7 +50,7 @@
 .dropdown-menu {
     background-color:#4088e6 !important;
     border-radius: 10px;    /* arredondar bordas */
-    border: 2px solid #cor; /* borda */
+    border: 2px solid white; /* borda */
     padding: 10px;
 }
 
@@ -48,3 +71,58 @@
     border-color: #fff;
     margin: 8px 0;
 }
+
+.navbar-brand {
+    transition: all 0.3s ease; /* Para fazer a transição suave */
+}
+
+.navbar-brand:hover {
+    color: #4088e6 !important;
+    transform: scale(1.1); /* Faz crescer um pouco */
+    /* ou */
+    opacity: 0.8; /* Deixa um pouco transparente */
+}
+
+.img-dog {
+    width: 50%;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+    transition: all 2s;
+}
+
+.logos {
+    display: flex;
+    gap: 20px;
+}
+
+.avatar {
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.logos :nth-child(2){
+    transition-delay: 400ms;
+}
+
+.logos :nth-child(3){
+    transition-delay: 700ms;
+}
+
+.logos :nth-child(4){
+    transition-delay: 1000ms;
+}
+
+  
