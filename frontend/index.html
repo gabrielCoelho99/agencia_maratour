@@ -17,7 +17,7 @@
 
   <!-- inicio da seção do menu -->
   <div class="menu">
-    <nav class="navbar navbar-expand-lg bg-primary bg-opacity-50">
+    <nav class="navbar fixed-top navbar-expand-lg bg-primary bg-opacity-50">
       <div class="container-fluid">
         <a class="navbar-brand text-white fw-bold fs-5" href="#">
           <img src="../assets/img/image-removebg-preview.png" alt="Logo" width="50" height="24" class="d-inline-block align-text-top ">
@@ -61,46 +61,105 @@
   <!-- final da seção do menu -->
 
   <!-- inicio da seção do header -->
-   <div class="hero">
-    <section class="hidden">
-      <h2>Seja Bem Vindo(a), já conhece o nosso trabalho?</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias rem ex tempore placeat in unde expedita. Nemo, accusantium dolorem aspernatur vitae laboriosam reprehenderit fugit dolore iste neque error unde iusto.</p>
+  <style>
+    .divider {
+      position: relative;
+      height: 60px;
+      margin: -10px 0;
+      overflow: hidden;
+    }
+    
+    .water-wave {
+      position: absolute;
+      width: 200%;
+      height: 100%;
+      animation: wave 4s linear infinite;
+    }
+    
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    </style>
+   <section class="header">
+      <section class="hidden">
+        <img class="logo-apresentacao" src="/img.svg" alt="">
+        <h2 class="apresentacao-texto">Seja Bem Vindo(a) ao <strong>Maratour</strong></h2>  
+      </section>
+   </section>
+
+   <div class="divider">
+    <svg class="water-wave" viewBox="0 0 1000 120" preserveAspectRatio="none">
+      <path fill="#40E0D0" fill-opacity="0.8">
+        <animate attributeName="d" 
+                 dur="4s"
+                 repeatCount="indefinite"
+                 values="
+                 M0,80 
+                 Q250,120 500,80 
+                 Q750,40 1000,80 
+                 L1000,0 
+                 L0,0 
+                 Z;
+  
+                 M0,80 
+                 Q250,40 500,80 
+                 Q750,120 1000,80 
+                 L1000,0 
+                 L0,0 
+                 Z;
+  
+                 M0,80 
+                 Q250,120 500,80 
+                 Q750,40 1000,80 
+                 L1000,0 
+                 L0,0 
+                 Z"/>
+      </path>
+    </svg>
+  </div>
+
+  <section class="hidden">
+      <h2 class="apresentacao-texto2">Sobre Nós</h2>
+      <p class="apresentacao-p">Somos uma agência Maranhese de viagens, focada em proporcionar a melhor viajem da sua vida para os melhores locais do Maranhão!</p>
   </section>
 
   <section class="hidden">
-      <h2>Meu Site</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque provident laboriosam veniam, animi esse, repudiandae ratione iste quod maxime ipsa cumque consequatur at reiciendis sint temporibus ea obcaecati in soluta!</p>
-  </section>
-
-  <section class="hidden">
-      <img class="img-dog" src="https://http.dog/200.jpg" alt="">
+    <div class="flip-card">
+      <!-- Adicione várias imagens -->
+      <img class="flip-image active" src="../assets/img/image-removebg-preview.png" alt="">
+      <img class="flip-image" src="../assets/img/ilha de sao luis/slz6.jpg" alt="">
+      <img class="flip-image" src="../assets/img/alcantara/alc4.jpg" alt="">
+      <img class="flip-image" src="../assets/img/barreirinhas/lencois3.jpg" alt="">
+    </div>
   </section>
 
   <section class="hidden">
       <div class="logos">
           <div class="hidden">
-              <img class="avatar" src="slz6.jpg" alt="">
+              <img class="avatar" src="../assets/img/carolina e riachão/mesa6.jpg" alt="">
           </div>
 
           <div class="hidden">
-              <img class="avatar" src="slz6.jpg" alt="">
+              <img class="avatar" src="../assets/img/carolina e riachão/mesa6.jpg" alt="">
           </div>
 
           <div class="hidden">
-              <img class="avatar" src="slz6.jpg" alt="">
+              <img class="avatar" src="../assets/img/carolina e riachão/mesa6.jpg" alt="">
           </div>
 
           <div class="hidden">
-              <img class="avatar" src="slz6.jpg" alt="">
+              <img class="avatar" src="../assets/img/carolina e riachão/mesa6.jpg" alt="">
           </div>
       </div>
   </section>
-   </div>
   <!-- final da seção do header -->
 
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+<script src="../assets/js/script.js"></script>
 </html>
 <script>
   AOS.init({
