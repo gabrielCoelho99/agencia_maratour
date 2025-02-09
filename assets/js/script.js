@@ -13,12 +13,9 @@ const elements = document.querySelectorAll('.hidden')
 elements.forEach((element) => myObserver.observe(element))
 
 let currentIndex = 0;
-let isHovering = false;
 
 function createFlipHandler(images) {
   return function() {
-    if (!isHovering) return;
-    
     images[currentIndex].classList.remove('active');
     images[currentIndex].classList.add('prev');
     
@@ -29,35 +26,20 @@ function createFlipHandler(images) {
   };
 }
 
-function setupFlipOnHover() {
-  const flipCard = document.querySelector('.flip-card');
+function setupAutoFlip() {
   const images = document.querySelectorAll('.flip-image');
-  
-  if (!flipCard || images.length === 0) return;
+  if (images.length === 0) return;
 
   const flip = createFlipHandler(images);
-  
-  flipCard.addEventListener('mouseenter', () => {
-    isHovering = true;
-    flip(); // Primeira transição imediata
-    flipCard.flipInterval = setInterval(flip, 2000); // Troca a cada 2s
-  });
-
-  flipCard.addEventListener('mouseleave', () => {
-    isHovering = false;
-    clearInterval(flipCard.flipInterval);
-    // Reseta para a primeira imagem
-    images.forEach(img => img.classList.remove('active', 'prev'));
-    currentIndex = 0;
-    images[0].classList.add('active');
-  });
+  setInterval(flip, 3000); // Troca a cada 2s automaticamente
 }
 
 // Ativa quando o elemento estiver visível
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting) {
-      setupFlipOnHover();
+      setupAutoFlip();
+      observer.unobserve(entry.target); // Garante que o script não seja reiniciado
     }
   });
 });
@@ -65,7 +47,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.flip-card').forEach(card => {
   observer.observe(card);
 });
-
 
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
@@ -80,4 +61,24 @@ window.addEventListener('scroll', () => {
     
     // Ajuste dinâmico do padding
     document.body.style.paddingTop = navbar.offsetHeight + 'px';
-  });
+});
+
+
+document.getElementById('travelRegistration').onsubmit = function(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: this.name.value,
+        email: this.email.value,
+        phone: this.phone.value,
+        destination: this.destination.value,
+        departure: this.departure.value,
+        travelers: this.travelers.value,
+        notes: this.notes.value
+    };
+
+    console.log('Dados da viagem:', formData);
+    alert('Cadastro realizado com sucesso! Entraremos em contato em breve.');
+    
+    this.reset();
+};

@@ -32,7 +32,7 @@ section{
 .header {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 50vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,6 +77,11 @@ section{
     color: white;
 }
 
+.texto-locais{
+    font-family: "Merienda", serif;
+    font-size: 2rem;
+}
+
 .apresentacao-p {
     font-family: "Merienda", serif;
     color: white;
@@ -87,10 +92,6 @@ section{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-}
-
-.img-dog {
     width: 50%;
 }
 
@@ -170,9 +171,17 @@ section{
     transition: all 2s;
 }
 
+/* Mantendo seu CSS original */
 .logos {
+    transition: .3s;
+    cursor: pointer;
     display: flex;
     gap: 20px;
+}
+
+.logos:hover > :not(:hover){
+    opacity: .4;
+    transform: scale(0.9);
 }
 
 .avatar {
@@ -194,13 +203,46 @@ section{
     transition-delay: 1000ms;
 }
 
-.flip-card {
-    perspective: 1000px;
+.card-title {
+    font-size: 1.25rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 5px 10px;
+    color: #333;
+}
+
+.card-description {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 5px 15px;
+    line-height: 1.5;
+}
+
+.card-button {
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 8px 20px;
+    background-color: #40E0D0;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
     width: 50%;
-    height: 50%;
+}
+
+.card-button:hover {
+    background-color: #20B2AA;
+}
+
+.flip-card {
+    perspective: 2000px;
+    width: 80%;
+    height: 70vh;
     position: relative;
     cursor: pointer;
-    transition: transform 0.5s;
+    transition: transform 0.8s;
   }
   
   .flip-card:hover {
@@ -233,8 +275,8 @@ section{
   }
  
   .navbar {
-    z-index: 1030; /* Valor maior que outros elementos */
-    transition: all 0.3s ease; /* Suaviza mudanças de estilo */
+    z-index: 1030; 
+    transition: all 0.3s ease;
   }
 
   .navbar-scrolled {
@@ -242,3 +284,32 @@ section{
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     backdrop-filter: blur(5px); /* Efeito de vidro fosco */
   }
+
+
+  .card {
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+textarea {
+    resize: vertical;
+}
+  
